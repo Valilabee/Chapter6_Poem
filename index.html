@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Chapter 6 Haiku</title>
 	<link rel="stylesheet" href="./assets/css/styles.css">
 	<style>
@@ -12,45 +13,59 @@
 		body {
 			margin: 1rem;
 			background-color: black;
-			background: url("assets/img/flames.gif");
-			background-repeat: no-repeat;
+			background: black url("assets/img/water.gif") no-repeat center/cover;
+			/*background-repeat: no-repeat;
 			background-position: center;
-			background-size: cover;
+			background-size: cover; */
 			color: whitesmoke;
 			font-size: 5rem;
 			overflow:hidden;
 		}
 		.grid-container {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			gap: 2rem;
 			grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+			gap: 2rem;
+			margin: 15% 4rem 0 4rem;
 		}
 		.last {
 			padding-bottom: 2rem;
 			border-bottom: 2px solid rgb(220, 200, 180);
-			margin: 15% 4rem 0 4rem;
+			/*margin: 15% 4rem 0 4rem;*/
+		}
+		body {
+			transition-property: transform;
+			transition-duration: 3s;
 		}
 	</style>
 </head>
 <body>
+
 	<div class="grid-container">
-		<div>A</div>
-		<div>radiant</div>
-		<div class="last">young</div>
-		<div>woman</div>
-		<div>to</div>
-		<div>light</div>
+		<div>Rapids</div>
+		<div>will</div>
+		<div>take</div>
+		<div class="last">you</div>
+		<div>but</div>
+		<div>as</div>
 		<div>the</div>
-		<div class="last">darkest</div>
-		<div>corners</div>
-		<div>of</div>
-		<div class="last">winter</div>
+		<div>water</div>
+		<div class="last">trickles</div>
+		<div>beauty</div>
+		<div class="last">recovers</div>
 	</div>
 
-	
 
-
-	<script src="./assets/js/main.js"></script>
+	<script>
+//		document.body.style.transform = `rotate(90deg)`;
+		
+		let rotation = 0;
+		document.addEventListener("click", function() {
+			let min = 10;
+			let max = 40;
+			rotation += Math.random() * (max - min) + min;
+			document.body.style.transform = `rotate(${rotation}deg)`;
+		});
+		
+	</script>
 </body>
 </html>
